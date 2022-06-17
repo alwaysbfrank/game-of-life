@@ -6,9 +6,9 @@ import java.util.stream.IntStream;
 import static java.lang.System.out;
 public class Game {
 
-    private static final String COLOR_RED = "\u001B[31m";
-    private static final String COLOR_BLACK = "\u001B[30m";
-    private static final String COLOR_GREEN = "\u001B[32m";
+    private static final String COLOR_RED = "";
+    private static final String COLOR_BLACK = "";
+    private static final String COLOR_GREEN = "";
     private static final String ALIVE = "#";
     private static final String DEAD = ".";
     private static final String UPPER_GRID = COLOR_BLACK + "_";
