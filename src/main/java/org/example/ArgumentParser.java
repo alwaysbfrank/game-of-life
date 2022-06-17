@@ -1,6 +1,5 @@
 package org.example;
 
-import io.vavr.Tuple2;
 import lombok.Getter;
 
 import java.util.Arrays;
@@ -18,7 +17,7 @@ class ArgumentParser {
     private final Rule rule;
     private final Integer gridSize;
 
-    private final Set<Tuple2<Integer, Integer>> seed;
+    private final Set<Coordinates> seed;
 
     public ArgumentParser(String[] argz) {
        var myRule = DEFAULT_RULE;
@@ -42,13 +41,13 @@ class ArgumentParser {
         this.seed = parseSeed(mySeed);
     }
 
-    private static Set<Tuple2<Integer, Integer>> parseSeed(String[] input) {
+    private static Set<Coordinates> parseSeed(String[] input) {
         return Arrays.stream(input).map(ArgumentParser::parseSingleSeed).collect(Collectors.toSet());
     }
 
-    private static Tuple2<Integer, Integer> parseSingleSeed(String input) {
+    private static Coordinates parseSingleSeed(String input) {
         var split = input.split(",");
-        return new Tuple2<>(Integer.parseInt(split[0]) - 1, Integer.parseInt(split[1]) - 1);
+        return new Coordinates(Integer.parseInt(split[0]) - 1, Integer.parseInt(split[1]) - 1);
     }
 
 }

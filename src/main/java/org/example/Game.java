@@ -1,7 +1,5 @@
 package org.example;
 
-import io.vavr.Tuple2;
-
 import java.util.Set;
 import java.util.stream.IntStream;
 
@@ -81,9 +79,9 @@ public class Game {
         }
     }
 
-    private void initializeGrid(Set<Tuple2<Integer, Integer>> seed) {
+    private void initializeGrid(Set<Coordinates> seed) {
         currentGrid = getNewGrid();
-        seed.forEach(coord -> currentGrid[coord._1()][coord._2()] = true);
+        seed.forEach(coord -> currentGrid[coord.getX()][coord.getY()] = true);
         previousGrid = getNewGrid();
     }
 
