@@ -75,7 +75,7 @@ public class Game {
 
     private boolean checkIfAlive(int x, int y) {
         try {
-            return currentGrid[x][y];
+            return currentGrid[x % gridSize][y % gridSize];
         } catch (ArrayIndexOutOfBoundsException ex) {
             return false;
         }
